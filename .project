@@ -5,24 +5,7 @@
 	<projects>
 	</projects>
 	<buildSpec>
-		<buildCommand>
-			<name>com.aptana.ide.core.unifiedBuilder</name>
-			<arguments>
-			</arguments>
-		</buildCommand>
 	</buildSpec>
 	<natures>
-		<nature>com.aptana.projects.webnature</nature>
 	</natures>
-	<filteredResources>
-		<filter>
-			<id>1529040817969</id>
-			<name></name>
-			<type>26</type>
-			<matcher>
-				<id>org.eclipse.ui.ide.multiFilter</id>
-				<arguments>1.0-name-matches-false-false-node_modules</arguments>
-			</matcher>
-		</filter>
-	</filteredResources>
 </projectDescription>
