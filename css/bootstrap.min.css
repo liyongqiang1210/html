@@ -10,13 +10,11 @@
 html {
 	font-family: sans-serif;
 	-webkit-text-size-adjust: 100%;
-	-ms-text-size-adjust: 100%;
-
+	-ms-text-size-adjust: 100%
 }
 
 body {
-	margin: 0;
-
+	margin: 0
 }
 
 article,
@@ -2014,8 +2012,8 @@ pre code {
 }
 
 .row {
-	/*margin-right: -15px;
-	margin-left: -15px*/
+	margin-right: -15px;
+	margin-left: -15px
 }
 
 .col-lg-1,
