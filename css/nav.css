@@ -60,16 +60,16 @@ a{text-decoration:none!important;}
 			.navbar-from{padding-left: 50px!important;}
 
 /*路径导航*/
-.route_nav{top: 60px;margin-left: 220px;width: 100%;height: 40px;position: fixed;transition: all .3s;}
+.route_nav{top: 60px;margin-left: 220px;width: 100%;height: 40px;position: fixed;transition: all .3s;z-index: 1;}
 .breadcrumb{border-radius: 0px!important;}
 
 /*左侧导航栏*/
-.nav-left-top{height: 36px;width: 220px;padding-left: 100px;padding-right: 100px;left: 0px;color: #ABB1B7;transition: all .3s;}
+.nav-left-top{height: 36px;width: 220px;padding-left: 100px;padding-right: 100px;left: 0px;color: #ABB1B7;transition: all .3s;z-index: 1;}
 #mini{padding-top: 3px;font-size: 20px;}
 
 /*main*/
-.main{padding-top: 100px; padding-left: 220px; width: 100%;height: 100%;position: fixed;transition: all .3s;z-index: -1;}
-iframe{border: 0px;width: 100%;padding-left:20px;padding-right:20px;height: 100%;}
+.main{padding-top: 100px; padding-left: 220px; width: 100%;height: 100%;position: fixed;transition: all .3s;z-index: 1;}
+iframe{border: 0px;width: 100%;height: 100%;}
 
 
 
