@@ -20,14 +20,14 @@ $(function(){
             $('.nav-left-item.nav-left-show').removeClass('nav-left-show');
             $('.nav-left-item').children('ul').removeAttr('style');
             $('.nav-left').addClass('nav-left-mini');
-            $('.route_nav').css('margin-left','60px');
+            $('.route_nav').css('left','60px');
             $('.nav-left-top').css({'width':'60px','padding-left':'20px','padding-right':'20px'});
-            $('.main').css('padding-left','60px');
+            $('.main').css('left','60px');
         }else{
             $('.nav-left').removeClass('nav-left-mini');
-            $('.route_nav').css('margin-left','220px');
+            $('.route_nav').css('left','220px');
              $('.nav-left-top').css({'width':'220px','padding-left':'100px','padding-right':'100px'});
-              $('.main').css('padding-left','220px');
+              $('.main').css('left','220px');
         }
     });
 });
