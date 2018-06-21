@@ -7030,6 +7030,7 @@ button.close {
 }
 
 .modal-open {
+	padding-right: 10px!important;
 	overflow: hidden
 }
 
@@ -7047,13 +7048,13 @@ button.close {
 }
 
 .modal.fade .modal-dialog {
-	-webkit-transition: -webkit-transform .3s ease-out;
-	-o-transition: -o-transform .3s ease-out;
-	transition: transform .3s ease-out;
-	-webkit-transform: translate(0, -25%);
-	-ms-transform: translate(0, -25%);
-	-o-transform: translate(0, -25%);
-	transform: translate(0, -25%)
+	-webkit-transition: -webkit-transform .1s ease-out;
+	-o-transition: -o-transform .1s ease-out;
+	transition: transform .1s ease-out;
+	-webkit-transform: translate(0, 25%);
+	-ms-transform: translate(0, 25%);
+	-o-transform: translate(0, 25%);
+	transform: translate(0, 25%)
 }
 
 .modal.in .modal-dialog {
@@ -7071,7 +7072,8 @@ button.close {
 .modal-dialog {
 	position: relative;
 	width: auto;
-	margin: 10px
+	top:20%;
+	margin: 10px;
 }
 
 .modal-content {
@@ -7081,7 +7083,7 @@ button.close {
 	background-clip: padding-box;
 	border: 1px solid #999;
 	border: 1px solid rgba(0, 0, 0, .2);
-	border-radius: 6px;
+/*	border-radius: 6px;*/
 	outline: 0;
 	-webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
 	box-shadow: 0 3px 9px rgba(0, 0, 0, .5)
