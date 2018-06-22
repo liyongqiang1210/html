@@ -21,7 +21,7 @@ body,
 html {
 	width: 100%;
 	height: 100%;
-	padding: 10px 10px 10px 10px;
+	padding: 0px 0px 0px 0px;
 	margin: 0px 0px 0px 0px;
 }
 
@@ -2013,8 +2013,8 @@ pre code {
 }
 
 .container-fluid {
-	/*padding-right: 15px;
-	padding-left: 15px;*/
+	padding-right: 15px;
+	padding-left: 15px;
 	margin-right: auto;
 	margin-left: auto
 }
@@ -6537,7 +6537,7 @@ button.list-group-item-danger.active:hover {
 	margin-bottom: 20px;
 	background-color: #fff;
 	border: 1px solid transparent;
-	border-radius: 4px;
+	/*border-radius: 4px;*/
 	-webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
 	box-shadow: 0 1px 1px rgba(0, 0, 0, .05)
 }
@@ -6549,8 +6549,8 @@ button.list-group-item-danger.active:hover {
 .panel-heading {
 	padding: 10px 15px;
 	border-bottom: 1px solid transparent;
-	border-top-left-radius: 3px;
-	border-top-right-radius: 3px
+	/*border-top-left-radius: 3px;
+	border-top-right-radius: 3px*/
 }
 
 .panel-heading>.dropdown .dropdown-toggle {
