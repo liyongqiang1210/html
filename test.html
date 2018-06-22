@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+	@-webkit-keyframes one-out {
+		0% {
+			-webkit-transform: translateX(3px) rotate(2deg);
+		}
+		10% {
+			-webkit-transform: translateX(-3px) rotate(-2deg);
+		}
+		20% {
+			-webkit-transform: translateX(3px) rotate(2deg);
+		}
+		30% {
+			-webkit-transform: translateX(-3px) rotate(-2deg);
+		}
+		40% {
+			-webkit-transform: translateX(3px) rotate(2deg);
+		}
+		50% {
+			-webkit-transform: translateX(-3px) rotate(-2deg);
+		}
+		60% {
+			-webkit-transform: translateX(3px) rotate(2deg);
+		}
+		70% {
+			-webkit-transform: translateX(2px) rotate(1deg);
+		}
+		80% {
+			-webkit-transform: translateX(-2px) rotate(-1deg);
+		}
+		90% {
+			-webkit-transform: translateX(1px) rotate(0);
+		}
+		100% {
+			-webkit-transform: translateX(-1px) rotate(0);
+		}
+
+	}
+	@-moz-keyframes one-out {
+		0% {
+			-moz-transform: translateX(3px) rotate(2deg);
+		}
+		10% {
+			-moz-transform: translateX(-3px) rotate(-2deg);
+		}
+		20% {
+			-moz-transform: translateX(3px) rotate(2deg);
+		}
+		30% {
+			-moz-transform: translateX(-3px) rotate(-2deg);
+		}
+		40% {
+			-moz-transform: translateX(3px) rotate(2deg);
+		}
+		50% {
+			-moz-transform: translateX(-3px) rotate(-2deg);
+		}
+		60% {
+			-moz-transform: translateX(3px) rotate(2deg);
+		}
+		70% {
+			-moz-transform: translateX(2px) rotate(1deg);
+		}
+		80% {
+			-moz-transform: translateX(-2px) rotate(-1deg);
+		}
+		90% {
+			-moz-transform: translateX(1px) rotate(0);
+		}
+		100% {
+			-moz-transform: translateX(-1px) rotate(0);
+		}
+
+	}
+
+	#one{
+		width: 200px;
+		height: 100px;
+		margin: 20px;
+		background: #e1e1e1;
+		position: relative;
+	}
+	#one:hover{
+		-moz-animation-name: one-out;
+		-moz-animation-duration: 0.5s;
+		-moz-animation-timing-function: linear;
+		-moz-animation-iteration-count: 10;
+		-webkit-animation-name: one-out;
+		-webkit-animation-duration: 0.5s;
+		-webkit-animation-timing-function: linear;
+		-webkit-animation-iteration-count: 2;
+	}
+</style>
+</head>
+
+<body>
+	<div id="one"></div>
+</body>
+
+</html>
