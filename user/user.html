@@ -8,29 +8,6 @@
 		<script src="../js/jquery.min.js"></script>
 		<script src="../js/bootstrap.min.js"></script>
 		<style>
-			/* 数据菜单栏 */
-			
-			.data-operate {
-				position: relative;
-				top: 0px;
-				height: 100px;
-				padding: 20px 20px;
-			}
-			/* 数据表格栏 */
-			
-			.data-table {
-				position: relative;
-				top: 120px;
-				min-height: 500px;
-			}
-			/* 数据分页栏 */
-			
-			.data-pagination {
-				position: relative;
-				bottom: 20px;
-				min-height: 100px;
-			}
-			
 			.row {
 				margin-right: 0px!important;
 				margin-left: 0px!important
@@ -63,6 +40,7 @@
 				left: 0px;
 				height: 50px;
 				width: 100%;
+				background-color: #FFFFFF;
 				padding: 5px 15px 5px 15px;
 				border-bottom: 1px solid #CCCCCC;
 			}
@@ -72,14 +50,15 @@
 				left: 0px;
 				height: 50px;
 				width: 100%;
+				background-color: #FFFFFF;
 				padding: 5px 15px 5px 15px;
 				border-bottom: 1px solid #CCCCCC;
 			}
 			.div-table {
-				position: relative;
-				top: 130px;
 				left: 0px;
 				width: 100%;
+				margin-top: 130px;
+				margin-bottom: 90px;
 				padding: 10px 10px 10px 10px;
 			}
 			.div-pagination{
@@ -88,6 +67,7 @@
 				left: 0px;
 				height: 50px;
 				width: 100%;
+				background-color: #FFFFFF;
 				padding: 8px 10px;
 				border-top: 1px solid #CCCCCC;
 			}
@@ -100,6 +80,7 @@
 				left: 0px;
 				height: 40px;
 				width: 100%;
+				background-color: #FFFFFF;
 				padding: 10px 10px 10px 10px;
 				border-top: 1px solid #CCCCCC;
 			}
@@ -119,84 +100,278 @@
 						<button id="modal-2" type="button" class="btn btn-default btn-success" href="#modal-container-2" data-toggle="modal">编辑用户</button>
 						<button id="modal-3" type="button" class="btn btn-default btn-warning" href="#modal-container-3" data-toggle="modal">删除</button>
 						<button id="modal-4" type="button" class="btn btn-default btn-danger" href="#modal-container-4" data-toggle="modal">删除选中</button>
-						<!--添加用户弹出框-->
-						<div class="modal fade" id="modal-container-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false">
-							<div class="modal-dialog">
-								<div class="modal-content">
-									<div class="modal-header">
-										<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-										<h4 class="modal-title" id="myModalLabel">
-									添加用户
-								</h4>
-									</div>
-									<div class="modal-body">
-										内容...
-									</div>
-									<div class="modal-footer">
-										<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button> <button type="button" class="btn btn-primary">保存</button>
-									</div>
-								</div>
-							</div>
-						</div>
-						<!--编辑用户弹出框-->
-						<div class="modal fade" id="modal-container-2" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-							<div class="modal-dialog">
-								<div class="modal-content">
-									<div class="modal-header">
-										<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-										<h4 class="modal-title" id="myModalLabel">
-									编辑用户
-								</h4>
-									</div>
-									<div class="modal-body">
-										内容...
-									</div>
-									<div class="modal-footer">
-										<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button> <button type="button" class="btn btn-primary">保存</button>
-									</div>
-								</div>
-							</div>
-						</div>
-						<!--删除用户弹出框-->
-						<div class="modal fade" id="modal-container-3" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false">
-							<div class="modal-dialog">
-								<div class="modal-content">
-									<div class="modal-header">
-										<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-										<h4 class="modal-title" id="myModalLabel">
-									删除用户
-								</h4>
-									</div>
-									<div class="modal-body">
-										确认要删除此用户吗?
-									</div>
-									<div class="modal-footer">
-										<button type="button" class="btn btn-default" data-dismiss="modal">取消</button> <button type="button" class="btn btn-danger">确认</button>
-									</div>
-								</div>
-							</div>
-						</div>
-						<!--删除选中用户弹出框-->
-						<div class="modal fade" id="modal-container-4" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false">
-							<div class="modal-dialog">
-								<div class="modal-content">
-									<div class="modal-header">
-										<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-										<h4 class="modal-title" id="myModalLabel">
-									删除选中用户
-								</h4>
-									</div>
-									<div class="modal-body">
-										确认要删除选中的用户吗?
-									</div>
-									<div class="modal-footer">
-										<button type="button" class="btn btn-default" data-dismiss="modal">取消</button> <button type="button" class="btn btn-danger">确认</button>
-									</div>
-								</div>
-							</div>
-						</div>
 					</div>
 					<div class="div-table">
+						<table class="table">
+							<thead>
+								<tr>
+									<th>
+										编号
+									</th>
+									<th>
+										产品
+									</th>
+									<th>
+										交付时间
+									</th>
+									<th>
+										状态
+									</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>
+										1
+									</td>
+									<td>
+										TB - Monthly
+									</td>
+									<td>
+										01/04/2012
+									</td>
+									<td>
+										Default
+									</td>
+								</tr>
+								<tr class="success">
+									<td>
+										1
+									</td>
+									<td>
+										TB - Monthly
+									</td>
+									<td>
+										01/04/2012
+									</td>
+									<td>
+										Approved
+									</td>
+								</tr>
+								<tr class="error">
+									<td>
+										2
+									</td>
+									<td>
+										TB - Monthly
+									</td>
+									<td>
+										02/04/2012
+									</td>
+									<td>
+										Declined
+									</td>
+								</tr>
+								<tr class="warning">
+									<td>
+										3
+									</td>
+									<td>
+										TB - Monthly
+									</td>
+									<td>
+										03/04/2012
+									</td>
+									<td>
+										Pending
+									</td>
+								</tr>
+								<tr class="info">
+									<td>
+										4
+									</td>
+									<td>
+										TB - Monthly
+									</td>
+									<td>
+										04/04/2012
+									</td>
+									<td>
+										Call in to confirm
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<table class="table">
+							<thead>
+								<tr>
+									<th>
+										编号
+									</th>
+									<th>
+										产品
+									</th>
+									<th>
+										交付时间
+									</th>
+									<th>
+										状态
+									</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>
+										1
+									</td>
+									<td>
+										TB - Monthly
+									</td>
+									<td>
+										01/04/2012
+									</td>
+									<td>
+										Default
+									</td>
+								</tr>
+								<tr class="success">
+									<td>
+										1
+									</td>
+									<td>
+										TB - Monthly
+									</td>
+									<td>
+										01/04/2012
+									</td>
+									<td>
+										Approved
+									</td>
+								</tr>
+								<tr class="error">
+									<td>
+										2
+									</td>
+									<td>
+										TB - Monthly
+									</td>
+									<td>
+										02/04/2012
+									</td>
+									<td>
+										Declined
+									</td>
+								</tr>
+								<tr class="warning">
+									<td>
+										3
+									</td>
+									<td>
+										TB - Monthly
+									</td>
+									<td>
+										03/04/2012
+									</td>
+									<td>
+										Pending
+									</td>
+								</tr>
+								<tr class="info">
+									<td>
+										4
+									</td>
+									<td>
+										TB - Monthly
+									</td>
+									<td>
+										04/04/2012
+									</td>
+									<td>
+										Call in to confirm
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<table class="table">
+							<thead>
+								<tr>
+									<th>
+										编号
+									</th>
+									<th>
+										产品
+									</th>
+									<th>
+										交付时间
+									</th>
+									<th>
+										状态
+									</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>
+										1
+									</td>
+									<td>
+										TB - Monthly
+									</td>
+									<td>
+										01/04/2012
+									</td>
+									<td>
+										Default
+									</td>
+								</tr>
+								<tr class="success">
+									<td>
+										1
+									</td>
+									<td>
+										TB - Monthly
+									</td>
+									<td>
+										01/04/2012
+									</td>
+									<td>
+										Approved
+									</td>
+								</tr>
+								<tr class="error">
+									<td>
+										2
+									</td>
+									<td>
+										TB - Monthly
+									</td>
+									<td>
+										02/04/2012
+									</td>
+									<td>
+										Declined
+									</td>
+								</tr>
+								<tr class="warning">
+									<td>
+										3
+									</td>
+									<td>
+										TB - Monthly
+									</td>
+									<td>
+										03/04/2012
+									</td>
+									<td>
+										Pending
+									</td>
+								</tr>
+								<tr class="info">
+									<td>
+										4
+									</td>
+									<td>
+										TB - Monthly
+									</td>
+									<td>
+										04/04/2012
+									</td>
+									<td>
+										Call in to confirm
+									</td>
+								</tr>
+							</tbody>
+						</table>
 						<table class="table">
 							<thead>
 								<tr>
@@ -316,6 +491,82 @@
 					<div class="div-bottom">
 
 					</div>
+					<!--添加用户弹出框-->
+						<div class="modal fade" id="modal-container-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+										<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+										<h4 class="modal-title" id="myModalLabel">
+									添加用户
+								</h4>
+									</div>
+									<div class="modal-body">
+										内容...
+									</div>
+									<div class="modal-footer">
+										<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button> <button type="button" class="btn btn-primary">保存</button>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!--编辑用户弹出框-->
+						<div class="modal fade" id="modal-container-2" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+										<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+										<h4 class="modal-title" id="myModalLabel">
+									编辑用户
+								</h4>
+									</div>
+									<div class="modal-body">
+										内容...
+									</div>
+									<div class="modal-footer">
+										<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button> <button type="button" class="btn btn-primary">保存</button>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!--删除用户弹出框-->
+						<div class="modal fade" id="modal-container-3" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+										<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+										<h4 class="modal-title" id="myModalLabel">
+									删除用户
+								</h4>
+									</div>
+									<div class="modal-body">
+										确认要删除此用户吗?
+									</div>
+									<div class="modal-footer">
+										<button type="button" class="btn btn-default" data-dismiss="modal">取消</button> <button type="button" class="btn btn-danger">确认</button>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!--删除选中用户弹出框-->
+						<div class="modal fade" id="modal-container-4" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+										<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+										<h4 class="modal-title" id="myModalLabel">
+									删除选中用户
+								</h4>
+									</div>
+									<div class="modal-body">
+										确认要删除选中的用户吗?
+									</div>
+									<div class="modal-footer">
+										<button type="button" class="btn btn-default" data-dismiss="modal">取消</button> <button type="button" class="btn btn-danger">确认</button>
+									</div>
+								</div>
+							</div>
+						</div>
 				</div>
 			</div>
 		</div>
