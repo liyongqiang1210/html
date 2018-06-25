@@ -150,6 +150,30 @@
 		<div class="main">
 			<iframe src="user/user.html"></iframe>
 		</div>
+		<script>
+			// 开启背景幕布
+			function openBackdrop() {
+				$(".main").after("<div class='modal-backdrop fade in'></div>");
+			}
+
+			// 关闭背景幕布
+			function closeBackdrop() {
+				$(".modal-backdrop").remove();
+			}
+
+			// 添加模态框
+			function openModel(html) {
+				openBackdrop();
+				$(".main").before(html);
+			}
+			
+			// 关闭模态框
+			function closeModel(){
+				closeBackdrop(); // 关闭背景幕布
+				$(".in").remove(); // 移除模态框
+			}
+
+		</script>
 	</body>
 
 </html>

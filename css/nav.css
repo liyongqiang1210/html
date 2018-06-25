@@ -35,7 +35,7 @@ a {
 	height: 60px;
 	padding-left: 0px!important;
 	padding-right: 0px!important;
-	z-index: 99999;
+	z-index: 999;
 }
 
 .navbar {
@@ -77,7 +77,7 @@ a {
 	left: 0px;
 	color: #ABB1B7;
 	transition: all .3s;
-	z-index: 99999;
+	z-index: 999;
 }
 
 #mini {
@@ -92,7 +92,7 @@ a {
 	position: fixed;
 	background: #263238;
 	transition: all .3s;
-	z-index: 99999;
+	z-index: 999;
 }
 
 .nav-left a {
