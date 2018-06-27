@@ -59,97 +59,23 @@ var TableInit = function() {
 	//初始化Table
 	oTableInit.Init = function() {
 		$('#table').bootstrapTable({
-			// url: '',         //请求后台的URL（*）
-			// method: 'get',                      //请求方式（*）
-			data: [{
-				Name: "1",
-				ParentName: 'Item 1',
-				Level: '1',
-				Desc: '1'
-			}, {
-				Name: "1",
-				ParentName: 'Item 1',
-				Level: '1',
-				Desc: '1'
-			}, {
-				Name: "1",
-				ParentName: 'Item 1',
-				Level: '1',
-				Desc: '1'
-			}, {
-				Name: "1",
-				ParentName: 'Item 1',
-				Level: '1',
-				Desc: '1'
-			}, {
-				Name: "1",
-				ParentName: 'Item 1',
-				Level: '1',
-				Desc: '1'
-			}, {
-				Name: "1",
-				ParentName: 'Item 1',
-				Level: '1',
-				Desc: '1'
-			}, {
-				Name: "1",
-				ParentName: 'Item 1',
-				Level: '1',
-				Desc: '1'
-			}, {
-				Name: "1",
-				ParentName: 'Item 1',
-				Level: '1',
-				Desc: '1'
-			}, {
-				Name: "1",
-				ParentName: 'Item 1',
-				Level: '1',
-				Desc: '1'
-			}, {
-				Name: "1",
-				ParentName: 'Item 1',
-				Level: '1',
-				Desc: '1'
-			}, {
-				Name: "1",
-				ParentName: 'Item 1',
-				Level: '1',
-				Desc: '1'
-			}, {
-				Name: "1",
-				ParentName: 'Item 1',
-				Level: '1',
-				Desc: '1'
-			}, {
-				Name: "1",
-				ParentName: 'Item 1',
-				Level: '1',
-				Desc: '1'
-			}, {
-				Name: "1",
-				ParentName: 'Item 1',
-				Level: '1',
-				Desc: '1'
-			}, {
-				Name: "1",
-				ParentName: 'Item 1',
-				Level: '1',
-				Desc: '1'
-			}, {
-				Name: "1",
-				ParentName: 'Item 1',
-				Level: '1',
-				Desc: '1'
-			}],
+			url: 'http://127.0.0.1:8080/Information_cms/user/findAll.do', //请求后台的URL（*）
+			method: 'get', //请求方式（*）
 			toolbar: '#toolbar', //工具按钮用哪个容器
 			striped: true, //是否显示行间隔色
 			cache: false, //是否使用缓存，默认为true，所以一般情况下需要设置一下这个属性（*）
 			pagination: true, //是否显示分页（*）
 			sortable: true, //是否启用排序
 			sortOrder: "asc", //排序方式
-			queryParams: oTableInit.queryParams, //传递参数（*）
-			sidePagination: "client", //分页方式：client客户端分页，server服务端分页（*）
+			queryParams: function(params) {
+				var temp = { //这里的键的名字和控制器的变量名必须一直，这边改动，控制器也需要改成一样的
+					limit: params.limit, //页面大小
+					offset: params.offset, //页码
+					username: $("#search_username").val()
+				};
+				return temp;
+			}, //传递参数（*）
+			sidePagination: "server", //分页方式：client客户端分页，server服务端分页（*）
 			pageNumber: 1, //初始化加载第一页，默认第一页
 			pageSize: 10, //每页的记录行数（*）
 			pageList: [10, 25, 50, 100], //可供选择的每页的行数（*）
@@ -167,34 +93,55 @@ var TableInit = function() {
 			columns: [{
 				checkbox: true
 			}, {
-				field: 'Name',
-				title: '部门名称'
+				field: 'id',
+				title: '用户ID'
 			}, {
-				field: 'ParentName',
-				title: '上级部门'
+				field: 'username',
+				title: '用户名'
 			}, {
-				field: 'Level',
-				title: '部门级别'
+				field: 'email',
+				title: '邮箱'
 			}, {
-				field: 'Desc',
-				title: '描述'
+				field: 'phone',
+				title: '手机号'
+			}, {
+				field: 'sex',
+				title: '性别'
+			}, {
+				field: 'operate',
+				title: '操作',
+				width: '400px',
+				events: operateEvents,
+				formatter: operateFormatter
 			}, ]
 		});
-
-		//得到查询的参数
-		oTableInit.queryParams = function(params) {
-			var temp = { //这里的键的名字和控制器的变量名必须一直，这边改动，控制器也需要改成一样的
-				limit: params.limit, //页面大小
-				offset: params.offset, //页码
-				departmentname: $("#txt_search_departmentname").val(),
-				statu: $("#txt_search_statu").val()
-			};
-			return temp;
-		};
-
 	};
 	return oTableInit;
+
 };
+
+window.operateEvents = {
+	//      'click #btn_edit': function(e, value, row, index) {  
+	//          detailmodal.open();  
+	//          $("#dev_id").val(row.id);  
+	//          $("#seq_no").val(row.seq_no);  
+	//          $("#dev_pos").val(row.position);  
+	//          $("#dev_type1").val(row.type);  
+	//          $("#dev_status").val(row.status);  
+	//          $("#fault").val(row.fault);  
+	//          $("#buy_time").val(row.purchase_time);  
+	//          $("#quality_time").val(row.quality_time);  
+	//          $("#inputer").val(row.inputer);  
+	//          $("#maintain_unit").val(row.maintain_unit);  
+	//      }  
+};
+
+function operateFormatter(value, row, index) {
+	return [
+		'<button id="btn_edit" type="button" class="btn btn-success btn-xs">编辑</button> &nbsp;',
+		'<button id="btn_delete" type="button" class="btn btn-danger btn-xs">删除</button>'
+	].join('');
+}
 
 var ButtonInit = function() {
 	var oInit = new Object();
