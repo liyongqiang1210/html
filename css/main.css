@@ -1,0 +1,308 @@
+@charset "utf-8";
+
+/* 以下实际使用若已初始化可删除 .nav height父级需逐级设置为100%*/
+
+body,
+ul {
+	margin: 0;
+	padding: 0
+}
+
+body,
+html {
+	padding: 0px 0px 0px 0px!important;
+}
+
+body {
+	font: 8px "微软雅黑", "宋体", "Arial Narrow", HELVETICA;
+	-webkit-text-size-adjust: 100%;
+}
+
+li {
+	list-style: none
+}
+
+a {
+	text-decoration: none!important;
+}
+
+
+/* 以上实际使用若已初始化可删除 */
+
+
+/*顶部导航栏*/
+
+.nav-top .navbar {
+	height: 45px!important;
+	min-height: 45px!important;
+}
+
+.nav-top {
+	position: fixed;
+	width: 100%;
+	padding-left: 0px!important;
+	padding-right: 0px!important;
+	z-index: 999;
+}
+
+.navbar {
+	background-color: #2d6dcc;
+	border-radius: 0px!important;
+}
+
+.navbar-from {
+	padding-left: 50px!important;
+}
+
+/*导航栏右侧菜单*/
+.navbar-right {
+	width: 160px;
+    height: 43px;
+}
+
+.navbar-right>li{
+	height: 43px;
+	width: 50px;
+	padding-top: 12px;
+	padding-left: 18px;
+}
+.navbar-right>li:hover,.navbar-right>li:focus,.navbar-right>li:visited{
+	background-color: #2B669A;
+}
+.navbar-right>li>a{
+	width: 30px!important;
+	height: 43px!important;
+}
+.dropdown-menu{
+	min-width: 135px!important;
+	right: -40px!important;
+}
+
+
+/*路径导航*/
+
+.route_nav {
+	top: 45px;
+	left: 220px;
+	right: 0px;
+	height: 40px;
+	color: #000000;
+	position: fixed;
+	transition: all .3s;
+	/*z-index: 1;*/
+}
+
+.breadcrumb {
+	height: 40px!important;
+	border-radius: 0px!important;
+	padding-top: 10px!important;
+	margin-bottom: 0px!important;
+	font-size: 16px;
+}
+
+.breadcrumb>li>a {
+	color: #000000;
+}
+
+
+/*左侧导航栏*/
+
+.nav-left-top {
+	height: 40px;
+	width: 220px;
+	padding-top: 5px;
+	padding-left: 100px;
+	padding-right: 100px;
+	left: 0px;
+	color: #000000;
+	transition: all .3s;
+	z-index: 999;
+}
+
+#mini {
+	padding-top: 5px;
+	font-size: 20px;
+}
+
+.nav-left {
+	top: 45px;
+	width: 220px;
+	height: 100%;
+	position: fixed;
+	/*background: #263238;*/
+	background: #E6E6E6;
+	transition: all .3s;
+	z-index: 999;
+}
+
+.nav-left a {
+	display: block;
+	overflow: hidden;
+	padding-left: 20px;
+	line-height: 46px;
+	max-height: 46px;
+	color: #000000;
+	transition: all .3s;
+}
+
+.nav-left a span {
+	margin-left: 30px;
+}
+
+.nav-left-item {
+	position: relative;
+}
+
+.nav-left-item.nav-left-show {
+	border-bottom: none;
+}
+
+.nav-left-item ul {
+	display: none;
+	background: rgba(0, 0, 0, .1);
+}
+
+.nav-left-item.nav-left-show ul {
+	display: block;
+}
+
+.nav-left-item>a:before {
+	content: "";
+	position: absolute;
+	left: 0px;
+	width: 2px;
+	height: 46px;
+	background: #34A0CE;
+	opacity: 0;
+	transition: all .3s;
+}
+
+.nav-left .nav-left-icon {
+	font-size: 20px;
+	position: absolute;
+	margin-left: -1px;
+}
+
+
+/* 此处修改导航图标 可自定义iconfont 替换*/
+
+.icon_1::after {
+	content: "\e62b";
+}
+
+.icon_2::after {
+	content: "\e669";
+}
+
+.icon_3::after {
+	content: "\e61d";
+}
+
+
+/*---------------------*/
+
+.nav-left-more {
+	float: right;
+	margin-right: 20px;
+	font-size: 12px;
+	transition: transform .3s;
+}
+
+
+/* 此处为导航右侧箭头 如果自定义iconfont 也需要替换*/
+
+.nav-left-more::after {
+	content: "\e621";
+}
+
+
+/*---------------------*/
+
+.nav-left-show .nav-left-more {
+	transform: rotate(90deg);
+}
+
+.nav-left-show,
+.nav-left-item>a:hover {
+	color: #FFF;
+	background: rgba(0, 0, 0, .1);
+}
+
+.nav-left-show>a:before,
+.nav-left-item>a:hover:before {
+	opacity: 1;
+}
+
+.nav-left-item li:hover a {
+	color: #FFF;
+	background: rgba(0, 0, 0, .1);
+}
+
+.nav-left-top:hover {
+	color: #FFF;
+	background: rgba(0, 0, 0, .1);
+}
+
+
+/* nav-left-mini */
+
+.nav-left-mini.nav-left {
+	width: 60px;
+	/*z-index: 9999;*/
+}
+
+.nav-left-mini.nav-left .nav-left-icon {
+	/* margin-left:-2px; */
+}
+
+.nav-left-mini.nav-left .nav-left-item>a span {
+	display: none;
+}
+
+.nav-left-mini.nav-left .nav-left-more {
+	margin-right: -20px;
+}
+
+.nav-left-mini.nav-left .nav-left-item ul {
+	position: absolute;
+	top: 0px;
+	left: 60px;
+	width: 180px;
+	background: #E6E6E6;
+	overflow: hidden;
+}
+
+.nav-left-mini.nav-left .nav-left-item:hover {
+	background: rgba(255, 255, 255, .1);
+}
+
+.nav-left-mini.nav-left .nav-left-item:hover .nav-left-item a {
+	color: #FFF;
+}
+
+.nav-left-mini.nav-left .nav-left-item:hover a:before {
+	opacity: 1;
+}
+
+.nav-left-mini.nav-left .nav-left-item:hover ul {
+	display: block;
+}
+
+
+/*内容页面*/
+
+.main {
+	top: 95px;
+	left: 220px;
+	right: 0px;
+	bottom: 0px;
+	position: fixed;
+	transition: all .3s;
+	/*z-index: 1;*/
+}
+
+iframe {
+	border: 0px;
+	width: 100%;
+	height: 100%;
+}
