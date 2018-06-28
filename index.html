@@ -19,7 +19,7 @@
 		<!-- 顶部导航栏 -->
 		<div class="nav-top">
 			<div class="col-md-12 column nav-top">
-				<nav class="navbar navbar-default" role="navigation">
+				<nav class="navbar navbar-inverse" role="navigation">
 					<div class="navbar-header">
 						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
 						<a class="navbar-brand" href="#">后台管理系统</a>
@@ -73,10 +73,10 @@
 						</ul>
 					</li>
 					<li class="nav-left-item">
-						<a href="javascript:;"><i class="my-icon nav-left-icon icon_3"></i><span>贴吧管理</span><i class="my-icon nav-left-more"></i></a>
+						<a href="javascript:;"><i class="my-icon nav-left-icon icon_3"></i><span>用户管理</span><i class="my-icon nav-left-more"></i></a>
 						<ul>
 							<li>
-								<a href="javascript:;"><span>CSDN</span></a>
+								<a href="../html/user/user.html" target="left_content"><span>用户列表</span></a>
 							</li>
 							<li>
 								<a href="javascript:;"><span>博客园</span></a>
@@ -104,7 +104,7 @@
 						</ul>
 					</li>
 					<li class="nav-left-item">
-						<a href="javascript:;"><i class="my-icon nav-left-icon icon_2"></i><span>文章管理</span><i class="my-icon nav-left-more"></i></a>
+						<a href="javascript:;"><i class="my-icon nav-left-icon icon_2"></i><span>系统管理</span><i class="my-icon nav-left-more"></i></a>
 						<ul>
 							<li>
 								<a href="javascript:;"><span>站内新闻</span></a>
@@ -148,7 +148,7 @@
 		</div>
 		<!-- 内容区域 -->
 		<div class="main">
-			<iframe src="user/user.html"></iframe>
+			<iframe id="left_content" name="left_content" src="../html/main.html"></iframe>
 		</div>
 		<script>
 			// 开启背景幕布
