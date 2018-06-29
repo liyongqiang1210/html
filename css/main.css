@@ -62,16 +62,19 @@ a {
 
 .navbar-right>li{
 	height: 43px;
-	width: 50px;
-	padding-top: 12px;
-	padding-left: 18px;
+	width: 40px;
+	display: block;
 }
 .navbar-right>li:hover,.navbar-right>li:focus,.navbar-right>li:visited{
 	background-color: #2B669A;
 }
 .navbar-right>li>a{
-	width: 30px!important;
+	width: 40px!important;
 	height: 43px!important;
+	padding-top: 12px;
+	padding-left: 13px;
+	display:block;
+	
 }
 .dropdown-menu{
 	min-width: 135px!important;
@@ -110,11 +113,12 @@ a {
 .nav-left-top {
 	height: 40px;
 	width: 220px;
+	left: 0px;
 	padding-top: 5px;
 	padding-left: 100px;
 	padding-right: 100px;
-	left: 0px;
 	color: #000000;
+	border-bottom: 1px solid #888888;
 	transition: all .3s;
 	z-index: 999;
 }
@@ -142,6 +146,7 @@ a {
 	line-height: 46px;
 	max-height: 46px;
 	color: #000000;
+	border-bottom: 1px solid #888888;
 	transition: all .3s;
 }
 
