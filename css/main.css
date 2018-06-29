@@ -46,7 +46,7 @@ a {
 }
 
 .navbar {
-	background-color: #2d6dcc;
+	background-color: #222222;
 	border-radius: 0px!important;
 }
 
@@ -54,31 +54,41 @@ a {
 	padding-left: 50px!important;
 }
 
+
 /*导航栏右侧菜单*/
+
 .navbar-right {
 	width: 160px;
-    height: 43px;
+	height: 43px;
 }
 
-.navbar-right>li{
+.navbar-right>div {
+	position: relative;
+	left: 0px;
+	top: 0px;
 	height: 43px;
 	width: 40px;
-	display: block;
+	margin-right: 10px;
+	float: left;
 }
-.navbar-right>li:hover,.navbar-right>li:focus,.navbar-right>li:visited{
-	background-color: #2B669A;
+
+.navbar-right>div>li:hover,
+.navbar-right>div>li:focus {
+	background: rgba(255, 255, 255, .2);
 }
-.navbar-right>li>a{
+
+.navbar-right>div>li>a {
 	width: 40px!important;
 	height: 43px!important;
 	padding-top: 12px;
 	padding-left: 13px;
-	display:block;
-	
+	display: block;
 }
-.dropdown-menu{
+
+.dropdown-menu {
 	min-width: 135px!important;
 	right: -40px!important;
+	margin: 0px 0 0!important;
 }
 
 
@@ -97,6 +107,8 @@ a {
 
 .breadcrumb {
 	height: 40px!important;
+	background-color: #FFFFFF!important;
+	border: 1px solid #DDDDDD!important;
 	border-radius: 0px!important;
 	padding-top: 10px!important;
 	margin-bottom: 0px!important;
@@ -114,11 +126,10 @@ a {
 	height: 40px;
 	width: 220px;
 	left: 0px;
-	padding-top: 5px;
+	padding-top: 2px;
 	padding-left: 100px;
 	padding-right: 100px;
-	color: #000000;
-	border-bottom: 1px solid #888888;
+	color: #FFFFFF;
 	transition: all .3s;
 	z-index: 999;
 }
@@ -126,15 +137,24 @@ a {
 #mini {
 	padding-top: 5px;
 	font-size: 20px;
+	transition: all .3s;
 }
+
+.left-close{
+	transform:rotate(90deg);
+	-ms-transform:rotate(90deg); /* IE 9 */
+	-webkit-transform:rotate(90deg); /* Safari and Chrome */
+}
+
+
 
 .nav-left {
 	top: 45px;
 	width: 220px;
 	height: 100%;
 	position: fixed;
-	/*background: #263238;*/
-	background: #E6E6E6;
+	background: #3C3C3C;
+	/*background: #E6E6E6;*/
 	transition: all .3s;
 	z-index: 999;
 }
@@ -145,8 +165,7 @@ a {
 	padding-left: 20px;
 	line-height: 46px;
 	max-height: 46px;
-	color: #000000;
-	border-bottom: 1px solid #888888;
+	color: #FFFFFF;
 	transition: all .3s;
 }
 
@@ -273,7 +292,7 @@ a {
 	top: 0px;
 	left: 60px;
 	width: 180px;
-	background: #E6E6E6;
+	background: #3C3C3C;
 	overflow: hidden;
 }
 
@@ -297,11 +316,11 @@ a {
 /*内容页面*/
 
 .main {
-	top: 95px;
+	position: fixed;
+	top: 85px;
 	left: 220px;
 	right: 0px;
 	bottom: 0px;
-	position: fixed;
 	transition: all .3s;
 	/*z-index: 1;*/
 }
