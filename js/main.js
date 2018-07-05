@@ -1,5 +1,28 @@
 $(function() {
-	// nav收缩展开
+
+	// 开启背景幕布
+	function openBackdrop() {
+		$(".main").after("<div class='modal-backdrop fade in'></div>");
+	}
+
+	// 关闭背景幕布
+	function closeBackdrop() {
+		$(".modal-backdrop").remove();
+	}
+
+	// 添加模态框
+	function openModel(html) {
+		openBackdrop();
+		$(".main").before(html);
+	}
+
+	// 关闭模态框
+	function closeModel() {
+		closeBackdrop(); // 关闭背景幕布
+		$(".in").remove(); // 移除模态框
+	}
+
+	// 左侧导航栏收缩展开
 	$('.nav-left-item>a').on('click', function() {
 		if(!$('.nav-left').hasClass('nav-left-mini')) {
 			if($(this).next().css('display') == "none") {
@@ -14,34 +37,35 @@ $(function() {
 			}
 		}
 	});
+
 	//nav-mini切换
 	$('.nav-left-top').on('click', function() {
 		if(!$('.nav-left').hasClass('nav-left-mini')) {
 			$('.nav-left-item.nav-left-show').removeClass('nav-left-show');
 			$('.nav-left-item').children('ul').removeAttr('style');
 			$('.nav-left').addClass('nav-left-mini');
-			$('.route_nav').css('left', '60px');
+			$('.route-nav').css('left', '60px');
 			$('.nav-left-top').css({
 				'width': '60px',
 				'padding-left': '20px',
 				'padding-right': '20px',
 			});
 			$('.main').css('left', '60px');
-			$('#mini').attr('class','left-close');
+			$('#mini').attr('class', 'left-close');
 		} else {
 			$('.nav-left').removeClass('nav-left-mini');
-			$('.route_nav').css('left', '220px');
+			$('.route-nav').css('left', '220px');
 			$('.nav-left-top').css({
 				'width': '220px',
 				'padding-left': '100px',
 				'padding-right': '100px'
 			});
 			$('.main').css('left', '220px');
-			$('#mini').attr('class','');
+			$('#mini').attr('class', '');
 		}
 	});
 
-	// 鼠标移动到该元素上时下拉框显示
+	// 顶部导航栏右侧菜单鼠标移动到该元素上时下拉框显示事件
 	$(".navbar-user>li").mouseenter(function() {
 		$(".navbar-user>li").attr("class", "open");
 	});
@@ -49,7 +73,7 @@ $(function() {
 		$(".navbar-skin>li").attr("class", "open");
 	});
 
-	// 鼠标从该元素上移开时下拉框隐藏
+	// 顶部导航栏右侧菜单鼠标从该元素上移开时下拉框隐藏事件
 	$(".navbar-user>li").mouseleave(function() {
 
 		$(".navbar-user>li").attr("class", "");
@@ -72,4 +96,22 @@ $(function() {
 	$(".navbar-skin-orange").on("click", function() {
 		$(".navbar").css("background-color", "orange");
 	});
+
+	// 路径导航条动态改变事件
+	$(".nav-left>nav>ul>li>ul>li>a").on("click", function() {
+
+		$("ol.breadcrumb").empty(); // 清楚当前元素中的内容
+		var title = $(this).text(); // 获取当前被点击标签的标题内容
+		var parentTitle = $(this).parent().parent().prev().text(); // 获取当前被点击标签的父标题内容
+		$("ol.breadcrumb").append("<li onclick='homePage()'><a href='main.html' target='left_content'>首页</a></li><li class='active'>" +
+			parentTitle + "</li><li class='active'>" + title + "</li>"); // 向当前元素中添加内容
+
+	});
+
 });
+
+// 点击路径导航首页时路径导航内容只剩下首页的方法
+function homePage() {
+	$("ol.breadcrumb").empty(); // 清楚当前元素中的内容
+	$("ol.breadcrumb").append("<li id='home-page'><a href='main.html' target='left_content'>首页</a></li>"); // 向当前元素中添加内容
+}

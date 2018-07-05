@@ -74,7 +74,7 @@
 			</div>
 			<nav>
 				<ul>
-					<li class="nav-left-item">
+					<li class="nav-left-item" title="技术博客管理">
 						<a href="javascript:;"><i class="my-icon nav-left-icon icon_3"></i><span>技术博客管理</span><i class="my-icon nav-left-more"></i></a>
 						<ul>
 							<li>
@@ -151,44 +151,17 @@
 			</nav>
 		</div>
 		<!-- 路径导航 -->
-		<div class="route_nav">
+		<div class="route-nav">
 			<ol class="breadcrumb">
-				<li>
+				<li onclick='homePage()'>
 					<a href="main.html" target="left_content">首页</a>
 				</li>
-				<li>
-					<a href="#">Library</a>
-				</li>
-				<li class="active">Data</li>
 			</ol>
 		</div>
 		<!-- 内容区域 -->
 		<div class="main">
 			<iframe id="left_content" name="left_content" src="../html/main.html"></iframe>
 		</div>
-		<script>
-			// 开启背景幕布
-			function openBackdrop() {
-				$(".main").after("<div class='modal-backdrop fade in'></div>");
-			}
-
-			// 关闭背景幕布
-			function closeBackdrop() {
-				$(".modal-backdrop").remove();
-			}
-
-			// 添加模态框
-			function openModel(html) {
-				openBackdrop();
-				$(".main").before(html);
-			}
-
-			// 关闭模态框
-			function closeModel() {
-				closeBackdrop(); // 关闭背景幕布
-				$(".in").remove(); // 移除模态框
-			}
-		</script>
 	</body>
 
 </html>
