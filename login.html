@@ -9,6 +9,9 @@
 		<script src="js/jquery.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
 		<style>
+			body,html{
+				background: #122B40;
+			}
 			.login-div {
 				height: 600px;
 				width: 400px;
@@ -39,18 +42,29 @@
 			.panel {
 				box-shadow: 0px 0px 15px #000000;
 			}
+			h3{
+				text-align: center;
+			}
+			.panel-title{
+				margin: 30px;
+				border-bottom-style: solid;
+				border-bottom-color: #AFD9EE;
+				border-bottom-width: 1px;
+				 
+			}
+			.checkCode{
+				cursor: pointer;
+			}
 		</style>
 	</head>
 
 	<body>
 		<div class="login-div">
 			<div class="panel panel-primary">
-				<div class="panel-heading">
-					<h3 class="panel-title">
-						用户登录
-					</h3>
-				</div>
 				<div class="panel-body">
+					<div class="panel-title"><h3>
+						用户登录
+					</h3></div>
 					<form class="form-horizontal" role="form">
 						<div class="form-group">
 							<label for="username" class="col-sm-3 control-label">用户名:</label>
@@ -67,23 +81,29 @@
 							<div class="col-sm-1"></div>
 						</div>
 						<div class="form-group">
-							<div class="col-sm-2"></div>
-							<div class="col-sm-4">
+							<div class="col-sm-3"></div>
+							<div class="col-sm-4"><input class="form-control" id="checkCode" type="text" placeholder="验证码">
+							</div>
+							<div class="col-sm-5">
+							<img id="updateCode" class="checkCode" title="点击更换验证码" src="http://localhost:8080/Information_cms/login/getCheckCode.do">
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-sm-1"></div>
+							<div class="col-sm-5">
 								<div class="checkbox">
 									<label><input type="checkbox"> 记住我  </label>
 								</div>
 							</div>
-							<div class="col-sm-6"></div>
-
-						</div>
-						<div class="form-group">
 							<div class="col-sm-2"></div>
-							<div class="col-sm-4">
+							<div class="col-sm-4" style="padding-top: 8px;">
 								<label><a href="javascript:;">忘记密码?</a></label>
 							</div>
+						</div>
+						<div class="form-group">
 							<div class="col-sm-1"></div>
-							<div class="col-sm-4">
-								<button type="button" class="btn btn-primary btn-block" onclick="login()">登录</button>
+							<div class="col-sm-10">
+								<button type="button" id="login" class="btn btn-primary btn-block">登录</button>
 							</div>
 							<div class="col-sm-1"></div>
 						</div>
@@ -94,22 +114,60 @@
 		</div>
 	</body>
 	<script type="text/javascript">
-		function login(){
-
+		
+		
+		$("#login").click(function(){
 			var username = $("#username").val(); // 用户名
 			var password = $("#password").val(); // 密码
-			var errorMessage = ""; // 返回的错误信息
+//			var errorMessage = ""; // 返回的错误信息
+//			var checkCode = $("#checkCode").val();
+//			var rememberMe = $("#rememberMe").prop("checked");
+//			$.ajax({
+//				type:"POST",
+//				url:"http://localhost:8080/Information_cms/login/toLogin.do",
+//				data:{
+//					username:username,
+//					password:password,
+//					rememberMe:rememberMe,
+//					checkCode:checkCode
+//					},	
+//				dataType:"json",
+//				success:function(data){
+//					var msg = data.msg;
+//					if(msg == "success"){
+//						if(username != null && username != ""){ 
+//							var exp = new Date(); //获得当前时间
+//							exp.setTime(exp.getTime() + 360*24*60*60*1000); //换成毫秒保存一年
+//							document.cookie = "username="+username+"; expires="+exp.toGMTString()+"; path=/";
+//						};
+//						$(location).prop('href','http://localhost:8080/Information_cms/html/main/index.html');
+//					}else{
+//						layer.alert(msg);
+//					}
+//				},
+//				error:function(data){
+//					console.log("发生异常");
+//				}
+//			});
+			
 
 			if(username == null || username == "" || password == null || password == ""){
+				$(".alert").remove();
 				$("form").prepend("<div class='alert alert-danger alert-dismissable'><button type='button'" +
 					"class='close' data-dismiss='alert' aria-hidden='true'> &times;</button>" + 
 					"用户名或密码不能为空。</div>");
 			}else if(errorMessage != ""){
+				$(".alert").remove();
 				$("form").prepend("<div class='alert alert-danger alert-dismissable'><button type='button'" +
 					"class='close' data-dismiss='alert' aria-hidden='true'> &times;</button>" + 
 					errorMessage + "</div>");
 			}
-		}
+		});
+		
+		$("#updateCode").click(function(){
+			// 此处加上随机数是为了告诉浏览器要发送一个新的请求
+			$("img.checkCode").prop("src","http://localhost:8080/Information_cms/login/getCheckCode.do?number=" + Math.random());
+		});
 	</script>
 
 </html>
