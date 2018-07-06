@@ -7,7 +7,6 @@
 		<link rel="stylesheet" href="css/bootstrap.min.css">
 
 		<script src="js/jquery.min.js"></script>
-		<script src="js/main.js"></script>
 		<script src="js/bootstrap.min.js"></script>
 		<style>
 			.login-div {
@@ -17,7 +16,7 @@
 				position: relative;
 				top: 60px;
 				animation: mymove 0.8s forwards;
-				/*火狐*/
+				/*Mozilla*/
 				-moz-animation: mymove 0.8s forwards;
 				/* Chrome, Safari, Opera */
 				-webkit-animation: mymove 0.8s forwards;
@@ -52,23 +51,18 @@
 					</h3>
 				</div>
 				<div class="panel-body">
-					<div class="alert alert-danger alert-dismissable">
-						<button type="button" class="close" data-dismiss="alert" aria-hidden="true">
-                &times;
-            </button> 错误！请进行一些更改。
-					</div>
 					<form class="form-horizontal" role="form">
 						<div class="form-group">
-							<label for="inputUsername" class="col-sm-3 control-label">用户名:</label>
+							<label for="username" class="col-sm-3 control-label">用户名:</label>
 							<div class="col-sm-8">
-								<input type="email" class="form-control" id="inputUsername" placeholder="用户名">
+								<input type="email" class="form-control" id="username" placeholder="用户名">
 							</div>
 							<div class="col-sm-1"></div>
 						</div>
 						<div class="form-group">
-							<label for="inputPassword" class="col-sm-3 control-label">密码:</label>
+							<label for="password" class="col-sm-3 control-label">密码:</label>
 							<div class="col-sm-8">
-								<input type="password" class="form-control" id="inputPassword" placeholder="密码">
+								<input type="password" class="form-control" id="password" placeholder="密码">
 							</div>
 							<div class="col-sm-1"></div>
 						</div>
@@ -89,7 +83,7 @@
 							</div>
 							<div class="col-sm-1"></div>
 							<div class="col-sm-4">
-								<button type="submit" class="btn btn-primary btn-block">登录</button>
+								<button type="button" class="btn btn-primary btn-block" onclick="login()">登录</button>
 							</div>
 							<div class="col-sm-1"></div>
 						</div>
@@ -99,5 +93,23 @@
 			</div>
 		</div>
 	</body>
+	<script type="text/javascript">
+		function login(){
+
+			var username = $("#username").val(); // 用户名
+			var password = $("#password").val(); // 密码
+			var errorMessage = ""; // 返回的错误信息
+
+			if(username == null || username == "" || password == null || password == ""){
+				$("form").prepend("<div class='alert alert-danger alert-dismissable'><button type='button'" +
+					"class='close' data-dismiss='alert' aria-hidden='true'> &times;</button>" + 
+					"用户名或密码不能为空。</div>");
+			}else if(errorMessage != ""){
+				$("form").prepend("<div class='alert alert-danger alert-dismissable'><button type='button'" +
+					"class='close' data-dismiss='alert' aria-hidden='true'> &times;</button>" + 
+					errorMessage + "</div>");
+			}
+		}
+	</script>
 
 </html>
