@@ -13,12 +13,10 @@ $(function() {
 			.on(
 					"click",
 					function() {
-						var html = "<div class='modal fade in' id='modal-container-1' role='dialog' aria-labelledby='myModalLabel' aria-hidden='false' style='display: block;'><div class='modal-dialog'><div class='modal-content'><div class='modal-header'><button type='button' class='close' onclick='closeModel()' data-dismiss='modal' aria-hidden='true'>×</button><h4 class='modal-title' id='myModalLabel'>添加用户</h4></div><div class='modal-body'>内容...</div><div class='modal-footer'><button type='button' class='btn btn-default' onclick='closeModel()' data-dismiss='modal'>关闭</button> <button type='button' class='btn btn-primary'>保存</button></div></div></div></div>";
-
 						if (window.top == window.self) { // 不存在父页面
-							openModel(html);
+							openModel("添加用户","内容");
 						} else {
-							window.parent.openModel(html);
+							window.parent.openModel("添加用户","内容");
 						}
 
 					});
@@ -28,11 +26,10 @@ $(function() {
 			.on(
 					"click",
 					function() {
-						var html = "<div class='modal fade in' id='modal-container-4' role='dialog' aria-labelledby='myModalLabel' aria-hidden='false' style='display: block;'><div class='modal-dialog'><div class='modal-content'><div class='modal-header'><button type='button' class='close' onclick='closeModel()' data-dismiss='modal' aria-hidden='true'>×</button><h4 class='modal-title' id='myModalLabel'>删除选中用户</h4></div><div class='modal-body'>确认要删除选中的用户吗?</div><div class='modal-footer'><button type='button' class='btn btn-default' onclick='closeModel()' data-dismiss='modal'>关闭</button> <button type='button' class='btn btn-danger'>确认</button></div></div></div></div>";
 						if (window.top == window.self) { // 不存在父页面
-							openModel(html);
+							openModel("删除选中用户","确认要删除选中的用户吗？");
 						} else {
-							window.parent.openModel(html);
+							window.parent.openModel("删除选中用户","确认要删除选中的用户吗？");
 						}
 					});
 
@@ -141,20 +138,18 @@ var ButtonInit = function() {
 
 // 编辑用户按钮事件
 function editUser() {
-	var html = "<div class='modal fade in' id='modal-container-2' role='dialog' aria-labelledby='myModalLabel' aria-hidden='false' style='display: block;'><div class='modal-dialog'><div class='modal-content'><div class='modal-header'><button type='button' class='close' onclick='closeModel()' data-dismiss='modal' aria-hidden='true'>×</button><h4 class='modal-title' id='myModalLabel'>编辑用户</h4></div><div class='modal-body'>内容...</div><div class='modal-footer'><button type='button' class='btn btn-default' onclick='closeModel()' data-dismiss='modal'>关闭</button> <button type='button' class='btn btn-primary'>保存</button></div></div></div></div>";
 	if (window.top == window.self) { // 不存在父页面
-		openModel(html);
+		openModel("编辑用户","内容");
 	} else {
-		window.parent.openModel(html);
+		window.parent.openModel("编辑用户","内容");
 	}
 }
 
 // 删除用户按钮事件
 function deleteUser() {
-	var html = "<div class='modal fade in' id='modal-container-3' role='dialog' aria-labelledby='myModalLabel' aria-hidden='false' style='display: block;'><div class='modal-dialog'><div class='modal-content'><div class='modal-header'><button type='button' class='close' onclick='closeModel()' data-dismiss='modal' aria-hidden='true'>×</button><h4 class='modal-title' id='myModalLabel'>删除用户</h4></div><div class='modal-body'>确认要删除当前用户吗?</div><div class='modal-footer'><button type='button' class='btn btn-default' onclick='closeModel()' data-dismiss='modal'>关闭</button> <button type='button' class='btn btn-danger'>确认</button></div></div></div></div>";
 	if (window.top == window.self) { // 不存在父页面
-		openModel(html);
+		openModel("删除用户","确认删除此用户吗？");
 	} else {
-		window.parent.openModel(html);
+		window.parent.openModel("删除用户","确认删除此用户吗？");
 	}
 }

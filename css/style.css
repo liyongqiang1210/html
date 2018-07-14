@@ -41,3 +41,9 @@
 	padding: 10px 10px 10px 10px;
 	border-top: 1px solid #CCCCCC;
 }
+
+.modal-body-button{
+	/*float: right;
+	position: absolute;
+	bottom: 5px;*/
+}
