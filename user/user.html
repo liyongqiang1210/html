@@ -1,59 +1,60 @@
 <!DOCTYPE html>
 <html>
 
-	<head>
-		<meta charset="UTF-8">
-		<title>用户管理</title>
-		<link rel="stylesheet" href="../css/bootstrap.min.css">
-		<link rel="stylesheet" href="../css/style.css">
+<head>
+<meta charset="UTF-8">
+<title>用户管理</title>
+<link rel="stylesheet" href="../css/bootstrap.min.css">
+<link rel="stylesheet" href="../css/style.css">
 
-		<script src="../js/jquery.min.js"></script>
-		<script src="../js/bootstrap.min.js"></script>
-		<script src="../user/user.js"></script>
+<script src="../js/jquery.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../user/user.js"></script>
+<script src="../js/common.js"></script>
+<!-- bootstrap表格插件 -->
+<link rel="stylesheet" href="../css/bootstrap-table.min.css">
+<script src="../js/bootstrap-table.min.js"></script>
+<script src="../js/bootstrap-table-zh-CN.min.js"></script>
+</head>
 
-		<!-- bootstrap表格插件 -->
-		<link rel="stylesheet" href="../css/bootstrap-table.min.css">
-		<script src="../js/bootstrap-table.min.js"></script>
-		<script src="../js/bootstrap-table-zh-CN.min.js"></script>
-	</head>
-
-	<body>
-		<div class="container-fluid">
-			<div class="row clearfix">
-				<div class="col-md-12 column">
-					<div class="panel-body div-select-from">
-						<div class="panel panel-default">
-							<div class="panel-heading">查询条件</div>
-							<div class="panel-body">
-								<form id="formSearch" class="form-horizontal">
-									<div class="form-group">
-										<label class="control-label col-sm-1" for="search_username">用户名</label>
-										<div class="col-sm-3">
-											<input type="text" class="form-control" id="search_username">
-										</div>
-										<div class="col-sm-4">
-											<button type="button" style="margin-left:50px" id="btn_query" class="btn btn-primary">查询</button>
-										</div>
+<body>
+	<div class="container-fluid">
+		<div class="row clearfix">
+			<div class="col-md-12 column">
+				<div class="panel-body div-select-from">
+					<div class="panel panel-default">
+						<div class="panel-heading">查询条件</div>
+						<div class="panel-body">
+							<form id="formSearch" class="form-horizontal">
+								<div class="form-group">
+									<label class="control-label col-sm-1" for="search_username">用户名</label>
+									<div class="col-sm-3">
+										<input type="text" class="form-control" id="search_username">
 									</div>
-								</form>
-							</div>
-						</div>
-						<div class="div-table">
-							<div id="toolbar" class="btn-group">
-								<button id="btn_add" type="button" class="btn btn-default">
-								<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>新增
-							</button>
-								<button id="btn_delete_select" type="button" class="btn btn-default">
-								<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>删除选中
-							</button>
-							</div>
-							<table id="table"></table>
-						</div>
-						<div class="div-bottom">
+									<div class="col-sm-4">
+										<button type="button" style="margin-left: 50px" id="btn_query"
+											class="btn btn-primary">查询</button>
+									</div>
+								</div>
+							</form>
 						</div>
 					</div>
+					<div class="div-table">
+						<div id="toolbar" class="btn-group">
+							<button id="btn_add" type="button" class="btn btn-default">
+								<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>新增
+							</button>
+							<button id="btn_delete_select" type="button"
+								class="btn btn-default">
+								<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>删除选中
+							</button>
+						</div>
+						<table id="table"></table>
+					</div>
+					<div class="div-bottom"></div>
 				</div>
 			</div>
-	</body>
+		</div>
+</body>
 
 </html>
