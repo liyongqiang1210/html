@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>移动窗口</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<style>
+
+	.main{
+		position: fixed;
+		left: 550px;
+		width: 800px;
+		height: 600px
+	}
+	/*示例3*/
+	.parents-div{
+		position:relative;
+		top: 0px;
+		left: 00px;
+		width: 100%;
+		height: 600px;
+		padding: 10px;
+		background-color: #686868;
+		border: 1px solid transparent;
+		-webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+		box-shadow: 0 1px 1px rgba(0, 0, 0, .05)
+
+	}
+	.children-div{
+		position: absolute;
+		min-width: 350px;
+		min-height: 40px;
+		padding: 10px 10px;
+		left: 0;
+		top:0;
+		cursor: pointer;
+		background-color: #6666CC;
+		color: #FFFFFF;
+		border: 1px solid transparent;
+		-webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+		box-shadow: 0 1px 1px rgba(0, 0, 0, .05)
+	}
+</style>
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/move_port.js"></script>
+</head>
+<body>
+	<div class="main">
+		<div class="parents-div">
+			<div class="children-div">
+				子级相对父级移动<button type="button" class="close" style="display: none;"><span aria-hidden="true">&times;</span></button>
+			</div>
+		</div>
+	</div>
+	<script>
+		move_obj(".children-div",750,550);
+	</script>
+</body>
+</html>

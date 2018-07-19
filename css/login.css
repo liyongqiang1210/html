@@ -1,0 +1,49 @@
+body, html {
+	background: #122B40;
+}
+
+/*进入页面时的动态效果*/
+.login-div {
+	height: 600px;
+	width: 400px;
+	margin: 0 auto;
+	position: relative;
+	top: 60px;
+	animation: mymove 0.8s forwards;
+	/*Mozilla*/
+	-moz-animation: mymove 0.8s forwards;
+	/* Chrome, Safari, Opera */
+	-webkit-animation: mymove 0.8s forwards;
+}
+/* Chrome, Safari, Opera */
+@-webkit-keyframes mymove { 100% {
+	top: 160px;
+}
+
+}
+/* Standard syntax */
+@keyframes mymove { 100% {
+	top: 160px;
+}
+
+}
+.panel-title {
+	margin: 30px 30px 10px 30px;
+	text-align: center;
+}
+
+/*渐变线*/
+.panel-line {
+	height: 1px;
+	margin: 0px 0px 30px 0px;
+	background: linear-gradient(to right, rgba(51, 122, 183, 0.1) 0%,
+		rgba(51, 122, 183, 0.2) 10%, rgba(51, 122, 183, 0.3) 20%,
+		rgba(51, 122, 183, 0.4) 30%, rgba(51, 122, 183, 0.5) 40%,
+		rgba(51, 122, 183, 0.8) 50%, rgba(51, 122, 183, 0.5) 60%,
+		rgba(51, 122, 183, 0.4) 70%, rgba(51, 122, 183, 0.3) 80%,
+		rgba(51, 122, 183, 0.2) 90%, rgba(51, 122, 183, 0.1) 100%);
+}
+
+.checkCode {
+	cursor: pointer;
+}

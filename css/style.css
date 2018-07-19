@@ -1,49 +1,6 @@
-.row {
-	margin-right: 0px!important;
-	margin-left: 0px!important
-}
-
-.container-fluid {
-	padding-right: 0px!important;
-	padding-left: 0px!important;
-}
-
-.col-md-12 {
-	padding-right: 0px!important;
-	padding-left: 0px!important
-}
-
-.div-select-from {
-	position: fixed;
-	top: 20px;
-	left: 0px;
-	height: 50px;
-	width: 100%;
-	background-color: #FFFFFF;
-	padding: 5px 15px 5px 15px;
-}
-
-.div-table {
-	left: 0px;
-	width: 100%;
-	margin-top: 30px;
-	margin-bottom: 40px;
-	padding: 10px 10px 10px 10px;
-}
-
-.div-bottom {
-	position: fixed;
-	bottom: 0px;
-	left: 0px;
-	height: 40px;
-	width: 100%;
-	background-color: #FFFFFF;
-	padding: 10px 10px 10px 10px;
-	border-top: 1px solid #CCCCCC;
-}
-
-.modal-body-button{
-	/*float: right;
-	position: absolute;
-	bottom: 5px;*/
-}
+.row {margin-right: 0px!important; margin-left: 0px!important }
+.container-fluid {padding-right: 0px!important; padding-left: 0px!important; }
+.col-md-12 {padding-right: 0px!important; padding-left: 0px!important } 
+.div-select-from {position: fixed; top: 20px; left: 0px; height: 50px; width: 100%; background-color: #FFFFFF; padding: 5px 15px 5px 15px; }
+.div-table {left: 0px; width: 100%; margin-top: 30px; margin-bottom: 40px; padding: 10px 10px 10px 10px; }
+.div-bottom {position: fixed; bottom: 0px; left: 0px; height: 40px; width: 100%; background-color: #FFFFFF; padding: 10px 10px 10px 10px; border-top: 1px solid #CCCCCC; }
