@@ -9,9 +9,12 @@
 		<script src="js/jquery.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
 		<style>
+			
 			body,html{
 				background: #122B40;
 			}
+			
+			/*进入页面时的动态效果*/
 			.login-div {
 				height: 600px;
 				width: 400px;
@@ -43,6 +46,8 @@
 				margin:30px 30px 10px 30px;
 				text-align: center;
 			}
+			
+			/*渐变线*/
 			.panel-line{
 				height:1px;
 				margin:0px 0px 30px 0px;
@@ -60,6 +65,7 @@
 					rgba(51,122,183,0.2) 90%,
 					rgba(51,122,183,0.1) 100%);
 			}
+			
 			.checkCode{
 				cursor: pointer;
 			}
@@ -120,40 +126,40 @@
 	</body>
 	<script type="text/javascript">
 		
-		
+		/*用户登录*/
 		$("#login").click(function(){
 			var username = $("#username").val(); // 用户名
 			var password = $("#password").val(); // 密码
-//			var errorMessage = ""; // 返回的错误信息
-//			var checkCode = $("#checkCode").val();
-//			var rememberMe = $("#rememberMe").prop("checked");
-//			$.ajax({
-//				type:"POST",
-//				url:"http://localhost:8080/Information_cms/login/toLogin.do",
-//				data:{
-//					username:username,
-//					password:password,
-//					rememberMe:rememberMe,
-//					checkCode:checkCode
-//					},	
-//				dataType:"json",
-//				success:function(data){
-//					var msg = data.msg;
-//					if(msg == "success"){
-//						if(username != null && username != ""){ 
-//							var exp = new Date(); //获得当前时间
-//							exp.setTime(exp.getTime() + 360*24*60*60*1000); //换成毫秒保存一年
-//							document.cookie = "username="+username+"; expires="+exp.toGMTString()+"; path=/";
-//						};
-//						$(location).prop('href','http://localhost:8080/Information_cms/html/main/index.html');
-//					}else{
-//						layer.alert(msg);
-//					}
-//				},
-//				error:function(data){
-//					console.log("发生异常");
-//				}
-//			});
+			var errorMessage = ""; // 返回的错误信息
+			var checkCode = $("#checkCode").val();
+			var rememberMe = $("#rememberMe").prop("checked");
+			$.ajax({
+				type:"POST",
+				url:"http://localhost:8080/Information_cms/login/toLogin.do",
+				data:{
+					username:username,
+					password:password,
+					rememberMe:rememberMe,
+					checkCode:checkCode
+					},	
+				dataType:"json",
+				success:function(data){
+					var msg = data.msg;
+					if(msg == "success"){
+						if(username != null && username != ""){ 
+							var exp = new Date(); //获得当前时间
+							exp.setTime(exp.getTime() + 360*24*60*60*1000); //换成毫秒保存一年
+							document.cookie = "username="+username+"; expires="+exp.toGMTString()+"; path=/";
+						};
+						$(location).prop('href','http://localhost:8080/Information_cms/html/main/index.html');
+					}else{
+						layer.alert(msg);
+					}
+				},
+				error:function(data){
+					console.log("发生异常");
+				}
+			});
 			
 
 			if(username == null || username == "" || password == null || password == ""){

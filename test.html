@@ -1,311 +1,82 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title></title>
+	<title>移动窗口</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 	<style>
-	@-webkit-keyframes one-out {
-		0% {
-			-webkit-transform: translateX(3px) rotate(2deg);
-		}
-		10% {
-			-webkit-transform: translateX(-3px) rotate(-2deg);
-		}
-		20% {
-			-webkit-transform: translateX(3px) rotate(2deg);
-		}
-		30% {
-			-webkit-transform: translateX(-3px) rotate(-2deg);
-		}
-		40% {
-			-webkit-transform: translateX(3px) rotate(2deg);
-		}
-		50% {
-			-webkit-transform: translateX(-3px) rotate(-2deg);
-		}
-		60% {
-			-webkit-transform: translateX(3px) rotate(2deg);
-		}
-		70% {
-			-webkit-transform: translateX(2px) rotate(1deg);
-		}
-		80% {
-			-webkit-transform: translateX(-2px) rotate(-1deg);
-		}
-		90% {
-			-webkit-transform: translateX(1px) rotate(0);
-		}
-		100% {
-			-webkit-transform: translateX(-1px) rotate(0);
-		}
+
+	.main{
+		position: fixed;
+		left: 550px;
+		width: 800px;
+		height: 600px
+	}
+	/*示例3*/
+	.parents-div{
+		position:relative;
+		top: 0px;
+		left: 00px;
+		width: 100%;
+		height: 600px;
+		padding: 10px;
+		background-color: #686868;
+		border: 1px solid transparent;
+		-webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+		box-shadow: 0 1px 1px rgba(0, 0, 0, .05)
 
 	}
-	@-moz-keyframes one-out {
-		0% {
-			-moz-transform: translateX(3px) rotate(2deg);
-		}
-		10% {
-			-moz-transform: translateX(-3px) rotate(-2deg);
-		}
-		20% {
-			-moz-transform: translateX(3px) rotate(2deg);
-		}
-		30% {
-			-moz-transform: translateX(-3px) rotate(-2deg);
-		}
-		40% {
-			-moz-transform: translateX(3px) rotate(2deg);
-		}
-		50% {
-			-moz-transform: translateX(-3px) rotate(-2deg);
-		}
-		60% {
-			-moz-transform: translateX(3px) rotate(2deg);
-		}
-		70% {
-			-moz-transform: translateX(2px) rotate(1deg);
-		}
-		80% {
-			-moz-transform: translateX(-2px) rotate(-1deg);
-		}
-		90% {
-			-moz-transform: translateX(1px) rotate(0);
-		}
-		100% {
-			-moz-transform: translateX(-1px) rotate(0);
-		}
-
-	}
-
-	#one{
-		width: 200px;
-		height: 100px;
-		margin: 20px;
-		background: #e1e1e1;
-		position: relative;
-	}
-	#one:hover{
-		-moz-animation-name: one-out;
-		-moz-animation-duration: 0.5s;
-		-moz-animation-timing-function: linear;
-		-moz-animation-iteration-count: 10;
-		-webkit-animation-name: one-out;
-		-webkit-animation-duration: 0.5s;
-		-webkit-animation-timing-function: linear;
-		-webkit-animation-iteration-count: 2;
+	.children-div{
+		position: absolute;
+		min-width: 350px;
+		min-height: 40px;
+		padding: 10px 10px;
+		left: 0;
+		top:0;
+		cursor: pointer;
+		background-color: #6666CC;
+		color: #FFFFFF;
+		border: 1px solid transparent;
+		-webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+		box-shadow: 0 1px 1px rgba(0, 0, 0, .05)
 	}
 </style>
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/move_port.js"></script>
 </head>
-
 <body>
-	<div id="one"></div>
-	<div class="panel panel-default">
-						<div class="panel-heading">
-							用户管理
-						</div>
-						<div class="panel-body">
-							<div class="data-operate">
-								<button id="modal-1" type="button" class="btn btn-default btn-primary" href="#modal-container-1" data-toggle="modal">添加用户</button>
-								<button id="modal-2" type="button" class="btn btn-default btn-success" href="#modal-container-2" data-toggle="modal">编辑用户</button>
-								<button id="modal-3" type="button" class="btn btn-default btn-warning" href="#modal-container-3" data-toggle="modal">删除</button>
-								<button id="modal-4" type="button" class="btn btn-default btn-danger" href="#modal-container-4" data-toggle="modal">删除选中</button>
-								<!--添加用户弹出框-->
-								<div class="modal fade" id="modal-container-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false">
-									<div class="modal-dialog">
-										<div class="modal-content">
-											<div class="modal-header">
-												<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-												<h4 class="modal-title" id="myModalLabel">
-									添加用户
-								</h4>
-											</div>
-											<div class="modal-body">
-												内容...
-											</div>
-											<div class="modal-footer">
-												<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button> <button type="button" class="btn btn-primary">保存</button>
-											</div>
-										</div>
-									</div>
-								</div>
-								<!--编辑用户弹出框-->
-								<div class="modal fade" id="modal-container-2" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-									<div class="modal-dialog">
-										<div class="modal-content">
-											<div class="modal-header">
-												<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-												<h4 class="modal-title" id="myModalLabel">
-									编辑用户
-								</h4>
-											</div>
-											<div class="modal-body">
-												内容...
-											</div>
-											<div class="modal-footer">
-												<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button> <button type="button" class="btn btn-primary">保存</button>
-											</div>
-										</div>
-									</div>
-								</div>
-								<!--删除用户弹出框-->
-								<div class="modal fade" id="modal-container-3" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false">
-									<div class="modal-dialog">
-										<div class="modal-content">
-											<div class="modal-header">
-												<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-												<h4 class="modal-title" id="myModalLabel">
-									删除用户
-								</h4>
-											</div>
-											<div class="modal-body">
-												确认要删除此用户吗?
-											</div>
-											<div class="modal-footer">
-												<button type="button" class="btn btn-default" data-dismiss="modal">取消</button> <button type="button" class="btn btn-danger">确认</button>
-											</div>
-										</div>
-									</div>
-								</div>
-								<!--删除选中用户弹出框-->
-								<div class="modal fade" id="modal-container-4" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false">
-									<div class="modal-dialog">
-										<div class="modal-content">
-											<div class="modal-header">
-												<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-												<h4 class="modal-title" id="myModalLabel">
-									删除选中用户
-								</h4>
-											</div>
-											<div class="modal-body">
-												确认要删除选中的用户吗?
-											</div>
-											<div class="modal-footer">
-												<button type="button" class="btn btn-default" data-dismiss="modal">取消</button> <button type="button" class="btn btn-danger">确认</button>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="data-table">
-								<table class="table">
-									<thead>
-										<tr>
-											<th>
-												编号
-											</th>
-											<th>
-												产品
-											</th>
-											<th>
-												交付时间
-											</th>
-											<th>
-												状态
-											</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td>
-												1
-											</td>
-											<td>
-												TB - Monthly
-											</td>
-											<td>
-												01/04/2012
-											</td>
-											<td>
-												Default
-											</td>
-										</tr>
-										<tr class="success">
-											<td>
-												1
-											</td>
-											<td>
-												TB - Monthly
-											</td>
-											<td>
-												01/04/2012
-											</td>
-											<td>
-												Approved
-											</td>
-										</tr>
-										<tr class="error">
-											<td>
-												2
-											</td>
-											<td>
-												TB - Monthly
-											</td>
-											<td>
-												02/04/2012
-											</td>
-											<td>
-												Declined
-											</td>
-										</tr>
-										<tr class="warning">
-											<td>
-												3
-											</td>
-											<td>
-												TB - Monthly
-											</td>
-											<td>
-												03/04/2012
-											</td>
-											<td>
-												Pending
-											</td>
-										</tr>
-										<tr class="info">
-											<td>
-												4
-											</td>
-											<td>
-												TB - Monthly
-											</td>
-											<td>
-												04/04/2012
-											</td>
-											<td>
-												Call in to confirm
-											</td>
-										</tr>
-									</tbody>
-								</table>
-							</div>
-							<div class="data-pagination">
-								<ul class="pagination">
-									<li>
-										<a href="#">Prev</a>
-									</li>
-									<li>
-										<a href="#">1</a>
-									</li>
-									<li>
-										<a href="#">2</a>
-									</li>
-									<li>
-										<a href="#">3</a>
-									</li>
-									<li>
-										<a href="#">4</a>
-									</li>
-									<li>
-										<a href="#">5</a>
-									</li>
-									<li>
-										<a href="#">Next</a>
-									</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-</body>
+	<div class="main">
+		<div class="parents-div">
+			<div class="children-div">
+				子级相对父级移动<button type="button" class="close" style="display: none;"><span aria-hidden="true">&times;</span></button>
+			</div>
+		</div>
+	</div>
 
+	<!-- <div class="parents-div">
+		<h3>示例三:相对于父级容器,从默认位置开始移动</h3>
+		<p>
+			class为:d0
+			<br>
+			调用方法时传前三个参数,其他默认:
+			<br>
+			move_obj(".d1",600,500);
+			<br>
+			600,500为父级容器大小,缺省参数将设置为默认值
+		</p>
+		<p style="color: red">
+			<b>传参时,请注意起始位置参数不要超过移动范围!</b>
+		</p>
+		<div class="children-div">
+			子级相对父级移动
+		</div>
+	</div> -->
+	
+	<script>
+		/*调用移动浮窗方法并按顺序传入正确参数["obj",x,y,l,t,m],obj必填*/
+   //示例:
+   move_obj(".children-div",750,550);
+</script>
+</body>
 </html>
