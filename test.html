@@ -7,8 +7,7 @@
 	<style>
 	.main{
 		position: relative;
-		margin: 0 20px;
-		width: 800px;
+		width: 100%;
 		height: 600px
 	}
 	/*示例3*/
@@ -46,13 +45,43 @@
 <body>
 	<div class="main">
 		<div class="parents-div">
-			<div class="children-div">
+			<!-- <div class="children-div one">
 				子级相对父级移动<button type="button" class="close" style="display: none;"><span aria-hidden="true">&times;</span></button>
 			</div>
+			<div class="children-div two">
+				子级相对父级移动<button type="button" class="close" style="display: none;"><span aria-hidden="true">&times;</span></button>
+			</div> -->
 		</div>
 	</div>
 	<script>
-		move_obj(".children-div",750,550);
+		$(function(){
+			
+			var id = 0;
+			function addMoveDiv(){
+				var left = Math.floor(Math.random()*1000+1);
+				var top = Math.floor(Math.random()*300+1);
+   				var l = Math.floor(Math.random()*100+1); // 距离div左边的距离
+				var m = Math.floor(Math.random()*20+10); // 间隔秒数
+				$(".parents-div").append("<div id=\""+id+"\" class=\"children-div\" style=\"left:"+left+"px;top:"+top+"px;\">子级相对父级移动<button type=\"button\" class=\"close\" style=\"display: none;\"><span aria-hidden=\"true\">&times;</span></button></div>");
+				move_obj("#"+id+"",$(".parents-div").width(),$(".parents-div").height(),1,1,left,top,m);
+			}
+			var start = setInterval(function () {
+
+				if(id <= 20){
+					addMoveDiv();
+					console.log(id);
+					id++;
+				}else{
+					$(".parents-div").empty();
+					id = 0;
+				}
+			},500);
+
+			
+			// move_obj(".two",$(".main").width(),$(".main").height(),1,1,10,t,m);
+
+		});
+		
 	</script>
 </body>
 </html>
