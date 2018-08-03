@@ -2,86 +2,11 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>移动窗口</title>
+	<title>测试</title>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-	<style>
-	.main{
-		position: relative;
-		width: 100%;
-		height: 600px
-	}
-	/*示例3*/
-	.parents-div{
-		position:relative;
-		top: 0px;
-		left: 0px;
-		width: 100%;
-		height: 600px;
-		padding: 10px;
-		background-color: #686868;
-		border: 1px solid transparent;
-		-webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
-		box-shadow: 0 1px 1px rgba(0, 0, 0, .05)
-	}
-	.children-div{
-		position: absolute;
-		min-width: 350px;
-		min-height: 40px;
-		padding: 10px 10px;
-		left: 0;
-		top:0;
-		cursor: pointer;
-		background-color: #6666CC;
-		color: #FFFFFF;
-		border: 1px solid transparent;
-		-webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
-		box-shadow: 0 1px 1px rgba(0, 0, 0, .05)
-	}
-</style>
-<script src="js/jquery.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/move_port.js"></script>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
 </head>
 <body>
-	<div class="main">
-		<div class="parents-div">
-			<!-- <div class="children-div one">
-				子级相对父级移动<button type="button" class="close" style="display: none;"><span aria-hidden="true">&times;</span></button>
-			</div>
-			<div class="children-div two">
-				子级相对父级移动<button type="button" class="close" style="display: none;"><span aria-hidden="true">&times;</span></button>
-			</div> -->
-		</div>
-	</div>
-	<script>
-		$(function(){
-			
-			var id = 0;
-			function addMoveDiv(){
-				var left = Math.floor(Math.random()*1000+1);
-				var top = Math.floor(Math.random()*300+1);
-   				var l = Math.floor(Math.random()*100+1); // 距离div左边的距离
-				var m = Math.floor(Math.random()*20+10); // 间隔秒数
-				$(".parents-div").append("<div id=\""+id+"\" class=\"children-div\" style=\"left:"+left+"px;top:"+top+"px;\">子级相对父级移动<button type=\"button\" class=\"close\" style=\"display: none;\"><span aria-hidden=\"true\">&times;</span></button></div>");
-				move_obj("#"+id+"",$(".parents-div").width(),$(".parents-div").height(),1,1,left,top,m);
-			}
-			var start = setInterval(function () {
-
-				if(id <= 20){
-					addMoveDiv();
-					console.log(id);
-					id++;
-				}else{
-					$(".parents-div").empty();
-					id = 0;
-				}
-			},500);
-
-			
-			// move_obj(".two",$(".main").width(),$(".main").height(),1,1,10,t,m);
-
-		});
-		
-	</script>
 </body>
 </html>

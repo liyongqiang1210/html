@@ -1,27 +1,27 @@
 $(function() {
 
 	// 从cookie中获取当前用户名
-	var username = getCookie("username");
-	// 如何cookie中当前用户为空的话页面自动跳转到登录页面
-	if (username == "") {
-		parent.location.href = "http://localhost:8080/Information_cms/login.html";
-	}
+	// var username = getCookie("username");
+	// // 如何cookie中当前用户为空的话页面自动跳转到登录页面
+	// if (username == "") {
+	// 	parent.location.href = "http://localhost:8080/Information_cms/login.html";
+	// }
 
-	// 用户登录后超过30分钟未操作的话则重新跳转到登录页面
-	var timeStart = 0;// 进入系统时间，
-	var timeOut = 7200;// 有效时间，设置为2小时
-	if (timeStart == 0) {
-		timeStart = (new Date()).getTime();// 得到初始成功登录系统的时间
-	}
-	document.onmousedown = function(event) {// 监听鼠标事件
-		var timeNow = (new Date()).getTime(); // 当前系统时间
-		var timeOp = timeNow - timeStart - timeOut * 1000;
-		if (timeOp > 0) {
-			parent.location.href = "http://localhost:8080/Information_cms/login.html";// 跳转到登录页面
-		} else {
-			timeStart = timeNow;// 未超时，则重新计时
-		}
-	}
+	// // 用户登录后超过30分钟未操作的话则重新跳转到登录页面
+	// var timeStart = 0;// 进入系统时间，
+	// var timeOut = 7200;// 有效时间，设置为2小时
+	// if (timeStart == 0) {
+	// 	timeStart = (new Date()).getTime();// 得到初始成功登录系统的时间
+	// }
+	// document.onmousedown = function(event) {// 监听鼠标事件
+	// 	var timeNow = (new Date()).getTime(); // 当前系统时间
+	// 	var timeOp = timeNow - timeStart - timeOut * 1000;
+	// 	if (timeOp > 0) {
+	// 		parent.location.href = "http://localhost:8080/Information_cms/login.html";// 跳转到登录页面
+	// 	} else {
+	// 		timeStart = timeNow;// 未超时，则重新计时
+	// 	}
+	// }
 	
 	// 左侧导航栏收缩展开
 	$('.nav-left-item>a').on(
