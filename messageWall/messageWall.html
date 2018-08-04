@@ -3,9 +3,9 @@
 <head>
 	<meta charset="utf-8">
 	<title></title>
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-	<script src="js/jquery.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="../messageWall/bootstrap.min.css">
+	<script src="../messageWall/jquery.min.js"></script>
+	<script src="../messageWall/bootstrap.min.js"></script>
 	<style>
 		body{
 			font-size: 15px;
@@ -22,13 +22,22 @@
 			box-shadow: 0px 2px 5px #f0f0f0;
 		}
 		.nav-left{
-			position: fixed;
+			position: sticky;
+			float: left;
 			top: 55px;
-			left: 200px;
+			left: 0px;
 			width: 200px;
 			height: 600px;
 			background-color: #ffffff;
 
+		}
+		.main{
+			position: relative;
+			float: left;
+			top: 55px;
+			left: 210px;
+			width: 100%;
+			background-color: #ffffff;
 		}
 	</style>
 </head>
@@ -38,19 +47,21 @@
 	<div class="nav-top">
 		
 	</div>
-<div class="nav-left">
-
-	</div>
 	<!-- 右侧导航栏 -->
+	<!-- <div class="nav-left">
+
+	</div> -->
 	
 	
 	<!-- 内容区域 -->
-	<div class="container" style="background-color: #ffffff; top: 55px!important;">
-		<div class="row clearfix">
-			<div class="col-md-12 column" style="height: 2000px;">
+	<div class="container">
+		<div class="nav-left">
 			
-			</div>
 		</div>
+		<div class="main" style="height: 2000px;">
+			
+		</div>
+		
 	</div>
 
 
