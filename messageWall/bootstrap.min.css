@@ -6320,7 +6320,8 @@ a.thumbnail:hover {
 
 a.list-group-item,
 button.list-group-item {
-	color: #555
+	/*color: #555*/
+	color: #989898
 }
 
 a.list-group-item .list-group-item-heading,

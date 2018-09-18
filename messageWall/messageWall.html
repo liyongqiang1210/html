@@ -1,69 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="utf-8">
-	<title></title>
+	<title>故事人生</title>
 	<link rel="stylesheet" type="text/css" href="../messageWall/bootstrap.min.css">
 	<script src="../messageWall/jquery.min.js"></script>
 	<script src="../messageWall/bootstrap.min.js"></script>
-	<style>
-		body{
-			font-size: 15px;
-			color: #1a1a1a;
-			background: #f6f6f6;
-		}
-		.nav-top{
-			position: fixed;
-			top: 0px;
-			left: 0px;
-			width: 100%;
-			height: 45px;
-			background-color: #ffffff;
-			box-shadow: 0px 2px 5px #f0f0f0;
-		}
-		.nav-left{
-			position: sticky;
-			float: left;
-			top: 55px;
-			left: 0px;
-			width: 200px;
-			height: 600px;
-			background-color: #ffffff;
 
+	<style>
+	body,
+	html {
+		font-size: 15px;
+		background: #F6F6F6
+	}
+
+	/*顶部导航栏*/
+	.nav-top {
+		position: fixed;
+		top: 0px;
+		left: 0px;
+		width: 100%;
+		height: 50px;
+		background-color: #ffffff;
+		box-shadow: 0px 2px 5px #f0f0f0;
+		z-index: 100
+	}
+
+	/*左侧导航栏*/
+	.nav-left {
+		position: fixed;
+		top: 60px;
+		width: 250px;
+		background-color: #ffffff
+	}
+
+	.list-group {
+		margin-bottom:0px!important
+	}
+
+	/*左侧菜单与右侧内容动态布局*/
+	@media (min-width:768px) {
+		.nav-left {
+			left: 100px;
 		}
-		.main{
-			position: relative;
-			float: left;
-			top: 55px;
-			left: 210px;
-			width: 100%;
-			background-color: #ffffff;
+		.main {
+			left: 350px
 		}
-	</style>
+	}
+
+	@media (min-width:992px) {
+		.nav-left {
+			left: 200px
+		}
+		.main {
+			left: 450px
+		}
+	}
+
+	@media (min-width:1200px) {
+		.nav-left {
+			left: 400px
+		}
+		.main {
+			left: 650px
+		}
+	}
+
+	/*内容区域*/
+	.main {
+		position: relative;
+		top: 50px;
+		width: 800px
+	}
+
+	.main>div,
+	.nav-left {
+		box-shadow: 0px 1px 3px rgba(26, 26, 26, .1)
+	}
+
+	/*信息容器*/
+	.item-box {
+		width: 780px;
+		height: 200px;
+		margin: 10px;
+		padding: 5px;
+		background: #ffffff
+	}
+</style>
 </head>
+
 <body>
-	
+
 	<!-- 顶部导航栏 -->
 	<div class="nav-top">
-		
 	</div>
 	<!-- 右侧导航栏 -->
-	<!-- <div class="nav-left">
+	<div class="nav-left">
+		<div class="list-group">
+			<a href="#" class="list-group-item active">推荐故事</a>
+			<a href="#" class="list-group-item"><span class="badge school-badge">14</span>校园故事</a>
+			<a href="#" class="list-group-item"><span class="badge social-badge">666</span>社会故事</a>
+			<a href="#" class="list-group-item"><span class="badge encouragement-badge">201</span>励志故事</a>
+			<a href="#" class="list-group-item"><span class="badge emotion-badge">78</span>情感故事</a>
+			<a href="#" class="list-group-item"><span class="badge joke-badge">88</span>笑话故事</a>
+			<a href="#" class="list-group-item"><span class="badge history-badge">33</span>历史故事</a>
+		</div>
 
-	</div> -->
-	
-	
+	</div>
 	<!-- 内容区域 -->
-	<div class="container">
-		<div class="nav-left">
-			
-		</div>
-		<div class="main" style="height: 2000px;">
-			
-		</div>
-		
+	<div id="masonry" class="main">
+		<div class="item-box">fdsfda<button type="button" class="close" data-dismiss="alert" data-toggle="tooltip" data-placement="left" title="不感兴趣" hidden><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button></div>
+		<div class="item-box"><button type="button" class="close" data-dismiss="alert" data-toggle="tooltip" data-placement="left" title="不感兴趣" hidden><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button></div>
+		<div class="item-box"><button type="button" class="close" data-dismiss="alert" data-toggle="tooltip" data-placement="left" title="不感兴趣" hidden><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button></div>
+		<div class="item-box"><button type="button" class="close" data-dismiss="alert" data-toggle="tooltip" data-placement="left" title="不感兴趣" hidden><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button></div>
+		<div class="item-box"><button type="button" class="close" data-dismiss="alert" data-toggle="tooltip" data-placement="left" title="不感兴趣" hidden><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button></div>
+		<div class="item-box"><button type="button" class="close" data-dismiss="alert" data-toggle="tooltip" data-placement="left" title="不感兴趣" hidden><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button></div>
 	</div>
 
-
 </body>
-</html>
+<script type="text/javascript">
+		// 滚动条到页面底部加载更多案例
+		$(window).scroll(function() {
+			var scrollTop = $(this).scrollTop(); // 滚动条距离顶部的高度
+			var scrollHeight = $(document).height(); // 当前页面的总高度
+			var clientHeight = $(this).height(); // 当前可视的页面高度
+			// console.log("top:"+scrollTop+",doc:"+scrollHeight+",client:"+clientHeight);
+			if(scrollTop + clientHeight >= scrollHeight) { //距离顶部+当前高度 >=文档总高度 即代表滑动到底部 count++;
+				//每次滑动count加1
+				// filterData(serviceTypeId,industryId,cityId,count); //调用筛选方法，count为当前分页数
+				getData();
+	} else if(scrollTop <= 20) {
+				//滚动条距离顶部的高度小于等于0 TODO
+			}
+		});
+
+		// 获取数据方法
+		function getData() {
+			for(var i = 0; i < 6; i++) {
+				$("#masonry").append("<div class='item-box'><button type='button' class='close' data-dismiss='alert' data-toggle='tooltip' data-placement='left' title='不感兴趣' hidden><span aria-hidden='true'>&times;</span><span class='sr-only'>Close</span></button></div>");
+			}
+		}
+		$(function() {
+
+			// 为动态添加的元素绑定点击事件
+			$("#masonry").on("click", ".close", function() {
+				$(this).parent().remove();
+			});
+
+			// 鼠标进入.item-box元素时事件
+			$("#masonry").on("mouseenter", ".item-box", function() {
+				// bootstrap工具提示js方法
+				$("[data-toggle='tooltip']").tooltip();
+				// 显示删除按钮
+				$(this).children().prop("hidden", false);
+			});
+
+			// 鼠标离开.item-box元素时事件
+			$("#masonry").on("mouseleave", ".item-box", function() {
+				// 隐藏删除按钮
+				$(this).children().prop("hidden", true);
+			})
+
+			// 为左侧导航栏更新数量添加title属性
+			$(".badge").attr({"title":"今日更新数量"});
+
+			// 左侧导航栏菜单按钮点击事件
+			$(".list-group-item").on("click",function(){
+				// bootstrap工具提示js方法
+				$("[data-toggle='tooltip']").tooltip();
+				// 将左侧菜单栏全部设置成未选中
+				$(".list-group>a").prop("class","list-group-item");
+				// 选中当前点击的菜单
+				$(this).prop("class","list-group-item active");
+				// 选中的菜单的字体改为白色
+			})
+		})
+	</script>
+
+	</html>
